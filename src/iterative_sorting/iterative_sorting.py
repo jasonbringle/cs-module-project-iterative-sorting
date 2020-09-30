@@ -17,10 +17,26 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-
-
-    return arr
+    #Assign a variable to the len method on the array
+    arrLen = len(arr)
+    #Loop through your array
+    for i in range(0, arrLen):
+        #Assign a variable to false.  When no items have been swapped this variable will remain False.
+        swapped = False
+        #iterate through for the length of the array but adjust so that the iteration goes one less index each time (Or iterate for the remaining indexes after each iteration)
+        #This adjust for the final two values in the iteration that will be solved.
+        for j in range(0, arrLen-i-1):
+        #Compare each element to its neighbor
+            if arr and arr[j] > arr[j+1]:
+                #Swap the elements if the item on the left is larger than right
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                #Update the swapped variable because a swap has happened
+                swapped = True
+        #If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+        if swapped == False:
+            print(arr)
+            return arr
+    return arr           
 
 '''
 STRETCH: implement the Counting Sort function below
