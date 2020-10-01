@@ -1,19 +1,22 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
+    #Loops thorugh array -1 because the last number will have nothing to compare to
     for i in range(0, len(arr) - 1):
+        #Assign a var to the current index
         cur_index = i
+        #Assign and initial value of the current index to a var "smallest_index".  This will be our storage for the smallest number as it moves through iteration.
         smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-
-
-        # TO-DO: swap
-        # Your code here
+        #Start loop that compares the current number with the one next to it. (curr_index + 1)
+        for j in range(cur_index + 1, len(arr)):
+            #Check if the current smallest value is greater than the current location in the loop
+            if arr[smallest_index] > arr[j]:
+                #If true assign the smallest index to the current index.
+                smallest_index = j
+        #After the loop on the comparing number (j)... swap the value of the current_index with value of the smallest index
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr
-
+#List = [5, 6, 7, 8, 89, 5, 23]
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
